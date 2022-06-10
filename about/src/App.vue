@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <h1 class="title">Sub App Vue About</h1>
+
+    <div id="container-sub"></div>
   </div>
 </template>
 

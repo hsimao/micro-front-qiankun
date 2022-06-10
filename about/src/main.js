@@ -4,6 +4,22 @@ import App from "./App.vue";
 import VueRouter from "vue-router";
 import routes from "./router";
 
+import { registerMicroApps, start } from "qiankun";
+
+registerMicroApps([
+  {
+    name: "reactProductApp-sub",
+    entry: "//localhost:3002",
+    container: "#container-sub",
+    activeRule: window.__POWERED_BY_QIANKUN_PARENT__
+      ? "/about/product-sub"
+      : "/product-sub"
+  }
+]);
+start({
+  prefetch: false
+});
+
 Vue.config.productionTip = false;
 
 let router = null;
