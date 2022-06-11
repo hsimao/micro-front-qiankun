@@ -7,11 +7,49 @@
       <router-link to="/profile">Profile</router-link>
     </div>
 
+    <p>globalState from container</p>
+    <pre>{{ getGlobalState }}</pre>
+
+    <button @click="handleAdd">count++</button>
+    <br />
+    <label for="">
+      name:
+      <input
+        type="text"
+        :value="getGlobalState.name"
+        @input="handleChangeName"
+      />
+    </label>
+
     <div id="container"></div>
 
     <router-view />
   </div>
 </template>
+
+<script>
+import { mapGetters } from "vuex";
+import { globalActions } from "./store";
+
+export default {
+  name: "App",
+  props: {
+    msg: String
+  },
+  computed: {
+    ...mapGetters(["getGlobalState"])
+  },
+  methods: {
+    handleAdd() {
+      const currentCount = this.getGlobalState.count;
+      globalActions.setGlobalState({ count: currentCount + 1 });
+    },
+    handleChangeName(event) {
+      globalActions.setGlobalState({ name: event.target.value });
+    }
+  }
+};
+</script>
 
 <style scoped>
 .title {

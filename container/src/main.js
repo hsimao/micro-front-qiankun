@@ -1,6 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
+import store from "./store";
 import { registerMicroApps, start } from "qiankun";
 
 // 由於本身有window.__POWERED_BY_QIANKUN__參數，sub應用無法判斷自己在第幾層
@@ -30,5 +31,6 @@ Vue.config.productionTip = false;
 
 new Vue({
   router,
+  store,
   render: (h) => h(App)
 }).$mount("#app");
