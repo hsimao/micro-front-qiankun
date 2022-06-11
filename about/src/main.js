@@ -17,7 +17,7 @@ registerMicroApps([
   }
 ]);
 start({
-  prefetch: false
+  prefetch: "all"
 });
 
 Vue.config.productionTip = false;

@@ -12,6 +12,7 @@
     <label for="">
       name:
       <input
+        v-if="getContainerState"
         type="text"
         :value="getContainerState.name"
         @input="handleChangeGlobalStateName"
