@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/product-sub">About nested product</router-link>
+    </div>
     <h1 class="title">Sub App Vue About</h1>
 
     <div id="container-sub"></div>

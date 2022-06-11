@@ -4,8 +4,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about"> About</router-link> |
       <router-link to="/product">Product</router-link> |
-      <router-link to="/profile">Profile</router-link> |
-      <router-link to="/about/product-sub">About product-sub</router-link>
+      <router-link to="/profile">Profile</router-link>
     </div>
 
     <div id="container"></div>
