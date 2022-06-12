@@ -1,18 +1,38 @@
 <template>
   <div class="aboutpage home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1 class="title">Sub App Vue About</h1>
+    <p>containerState</p>
+    <pre>{{ getContainerState }}</pre>
+
+    <button @click="handleAdd">count++</button>
+    <label for="">
+      name:
+      <input
+        v-if="getContainerState"
+        type="text"
+        :value="getContainerState.name"
+        @input="handleChangeGlobalStateName"
+      />
+    </label>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Home",
-  components: {
-    HelloWorld
+  computed: {
+    ...mapGetters(["getContainerState"])
+  },
+  methods: {
+    handleAdd() {
+      const currentCount = this.getContainerState?.count;
+      this.$store.setGlobalState({ count: currentCount + 1 });
+    },
+    handleChangeGlobalStateName(event) {
+      this.$store.setGlobalState({ name: event.target.value });
+    }
   }
 };
 </script>

@@ -5,10 +5,11 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    containerState: null
+    containerState: {}
   },
   mutations: {
     setContainerState(state, payload) {
+      console.log("setContainerState", payload);
       state.containerState = payload;
     }
   },

@@ -4,21 +4,6 @@ import App from "./App.vue";
 import VueRouter from "vue-router";
 import routes from "./router";
 import store from "./store";
-import { registerMicroApps, start } from "qiankun";
-
-registerMicroApps([
-  {
-    name: "reactProductApp-sub",
-    entry: "//localhost:3002",
-    container: "#container-sub",
-    activeRule: window.__POWERED_BY_QIANKUN_PARENT__
-      ? "/about/product-sub"
-      : "/product-sub"
-  }
-]);
-start({
-  prefetch: "all"
-});
 
 Vue.config.productionTip = false;
 
@@ -27,6 +12,7 @@ let instance = null;
 
 function render(props = {}) {
   const { container, setGlobalState } = props;
+
   router = new VueRouter({
     base: window.__POWERED_BY_QIANKUN__ ? "/about/" : "/",
     mode: "history",
@@ -41,7 +27,7 @@ function render(props = {}) {
     router,
     store,
     render: (h) => h(App)
-  }).$mount(container ? container.querySelector("#app") : "#app");
+  }).$mount(container ? container.querySelector("#about-app") : "#about-app");
 }
 
 // 独立运行时
@@ -50,11 +36,10 @@ if (!window.__POWERED_BY_QIANKUN__) {
 }
 
 export async function bootstrap() {
-  console.log("[vue] vue app bootstraped");
+  console.log("[vue] vue about app bootstraped");
 }
 export async function mount(props) {
-  // store.globalActions =
-  console.log("abot props", props);
+  console.log("[vue] vue about app mount");
   props.onGlobalStateChange((state, prev) => {
     store.commit("setContainerState", state);
   }, true);

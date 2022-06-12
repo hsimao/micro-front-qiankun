@@ -1,54 +1,30 @@
 <template>
-  <div id="app">
+  <div id="about-app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/product-sub">About nested product</router-link>
+      <router-link to="/contact">Contact</router-link> |
+      <router-link to="/product">About nested product</router-link> |
+      <router-link to="/shop">About nested Shop</router-link>
     </div>
-    <h1 class="title">Sub App Vue About</h1>
-    <p>containerState</p>
-    <pre>{{ getContainerState }}</pre>
 
-    <button @click="handleAdd">count++</button>
-    <label for="">
-      name:
-      <input
-        v-if="getContainerState"
-        type="text"
-        :value="getContainerState.name"
-        @input="handleChangeGlobalStateName"
-      />
-    </label>
-    <div id="container-sub"></div>
+    <router-view />
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
 export default {
-  name: "AboutApp",
-  computed: {
-    ...mapGetters(["getContainerState"])
-  },
-
-  methods: {
-    handleAdd() {
-      const currentCount = this.getContainerState.count;
-      this.$store.setGlobalState({ count: currentCount + 1 });
-    },
-    handleChangeGlobalStateName(event) {
-      this.$store.setGlobalState({ name: event.target.value });
-    }
-  }
+  name: "AboutApp"
 };
 </script>
 
-<style>
-#app {
+<style scoped>
+#about-app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: #53bf9d;
 }
 
 #nav {
@@ -60,7 +36,7 @@ export default {
   color: #2c3e50;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+#about-app #nav a.router-link-exact-active {
+  color: white;
 }
 </style>

@@ -2,8 +2,12 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about"> About</router-link> |
+      <router-link to="/about">About</router-link> |
+      <router-link to="/about/contact">Contact</router-link> |
+      <router-link to="/about/product">About Product</router-link> |
+      <router-link to="/about/shop/">About Shop</router-link> |
       <router-link to="/product">Product</router-link> |
+      <router-link to="/shop">Shop</router-link> |
       <router-link to="/profile">Profile</router-link>
     </div>
 
@@ -23,7 +27,9 @@
 
     <div id="container"></div>
 
-    <router-view />
+    <keep-alive>
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 
@@ -52,11 +58,6 @@ export default {
 </script>
 
 <style scoped>
-.title {
-  color: red;
-}
-</style>
-<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -76,5 +77,10 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+#container {
+  width: 80%;
+  margin: 0 auto;
 }
 </style>
