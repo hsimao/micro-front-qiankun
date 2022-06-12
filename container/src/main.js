@@ -13,7 +13,7 @@ registerMicroApps([
     name: "vueMemberApp",
     entry:
       process.env.NODE_ENV === "production"
-        ? "./micro-front-qiankun/child/member/" // github page 用 ./
+        ? "/child/member/" // github page 用 ./
         : "//localhost:3001/child/member/",
     container: "#container",
     activeRule: "/member"
