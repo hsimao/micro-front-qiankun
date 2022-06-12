@@ -12,9 +12,14 @@ let instance = null;
 
 function render(props = {}) {
   const { container, setGlobalState } = props;
+  const basePrefix =
+    process.env.NODE_ENV === "production" ? "/micro-front-qiankun/" : "";
+  const base = window.__POWERED_BY_QIANKUN__
+    ? `${basePrefix}/member/`
+    : `${basePrefix}/child/member/`;
 
   router = new VueRouter({
-    base: window.__POWERED_BY_QIANKUN__ ? "/member/" : "/child/member/",
+    base,
     mode: "history",
     routes
   });
