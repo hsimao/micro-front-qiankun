@@ -16,6 +16,6 @@ module.exports = {
   },
   publicPath:
     process.env.NODE_ENV === "production"
-      ? "/micro-front-qiankun/member"
+      ? "/micro-front-qiankun/child/member/"
       : "/child/member/"
 };
