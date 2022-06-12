@@ -14,5 +14,6 @@ module.exports = {
       jsonpFunction: `webpackJsonp_${name}`
     }
   },
-  publicPath: "child/shop/"
+  // publicPath: "/child/shop/"
+  publicPath: "./"
 };
