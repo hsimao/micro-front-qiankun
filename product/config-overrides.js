@@ -2,6 +2,8 @@ const { name } = require("./package");
 
 module.exports = {
   webpack: (config) => {
+    config.output.publicPath =
+      process.env.NODE_ENV === "production" ? "/child/product/" : "/";
     config.output.library = `${name}-[name]`;
     config.output.libraryTarget = "umd";
     config.output.chunkLoadingGlobal = `webpackJsonp_${name}`;

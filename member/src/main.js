@@ -14,7 +14,7 @@ function render(props = {}) {
   const { container, setGlobalState } = props;
 
   router = new VueRouter({
-    base: window.__POWERED_BY_QIANKUN__ ? "/member/" : "/",
+    base: window.__POWERED_BY_QIANKUN__ ? "/member/" : "/child/member/",
     mode: "history",
     routes
   });

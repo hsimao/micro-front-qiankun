@@ -11,19 +11,28 @@ window.__POWERED_BY_QIANKUN_PARENT__ = true;
 registerMicroApps([
   {
     name: "vueMemberApp",
-    entry: "//localhost:3001",
+    entry:
+      process.env.NODE_ENV === "production"
+        ? "/child/member/"
+        : "//localhost:3001/child/member/",
     container: "#container",
     activeRule: "/member"
   },
   {
     name: "reactProductApp",
-    entry: "//localhost:3002",
+    entry:
+      process.env.NODE_ENV === "production"
+        ? "/child/product/"
+        : "//localhost:3002/child/product/",
     container: "#container",
     activeRule: "/product"
   },
   {
     name: "vueShopApp",
-    entry: "//localhost:3003",
+    entry:
+      process.env.NODE_ENV === "production"
+        ? "/child/shop/"
+        : "//localhost:3003/child/shop/",
     container: "#container",
     activeRule: "/shop"
   }

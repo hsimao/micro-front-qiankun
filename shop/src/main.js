@@ -14,16 +14,10 @@ let instance = null;
 function render(props = {}) {
   const { container, setGlobalState } = props;
 
-  let base = "/";
-  // NOTE: 如果有 __POWERED_BY_QIANKUN_PARENT__ 表示自己是第三層微服務
-  if (window.__POWERED_BY_QIANKUN_PARENT__) {
-    base = "/member/shop";
-    // NOTE: 如果是 __POWERED_BY_QIANKUN__ 表示自己是第二層微服務
-  } else if (window.__POWERED_BY_QIANKUN__) {
-    base = "/shop";
-  }
   router = new VueRouter({
-    base,
+    base: window.__POWERED_BY_QIANKUN_PARENT__
+      ? "/child/member/shop/"
+      : "/child/shop/",
     mode: "history",
     routes
   });

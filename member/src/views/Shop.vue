@@ -19,11 +19,12 @@ export default {
   mounted() {
     this.microApp = loadMicroApp({
       name: "vueShopApp-sub",
-      entry: "//localhost:3003",
+      entry:
+        process.env.NODE_ENV === "production"
+          ? "/child/shop/"
+          : "//localhost:3003/child/shop/",
       container: "#member-container-shop",
-      activeRule: window.__POWERED_BY_QIANKUN_PARENT__
-        ? "/member/shop"
-        : "/shop"
+      activeRule: "/member/shop"
     });
   },
   beforeDestroy() {

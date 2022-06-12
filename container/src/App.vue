@@ -9,7 +9,7 @@
       <div class="nav__item">
         <p>Member 子應用</p>
         ： <router-link to="/member">Member</router-link> |
-        <router-link to="/member/contact">Contact</router-link> |
+        <router-link to="/member/profile">Profile</router-link> |
         <router-link to="/member/product">嵌套子應用 Product</router-link> |
         <router-link to="/member/shop/">嵌套子應用 Shop</router-link>
       </div>

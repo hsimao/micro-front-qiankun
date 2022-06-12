@@ -19,11 +19,12 @@ export default {
   mounted() {
     this.microApp = loadMicroApp({
       name: "reactProductApp-sub",
-      entry: "//localhost:3002",
+      entry:
+        process.env.NODE_ENV === "production"
+          ? "/child/product/"
+          : "//localhost:3002/child/product/",
       container: "#member-container-product",
-      activeRule: window.__POWERED_BY_QIANKUN_PARENT__
-        ? "/member/product"
-        : "/product"
+      activeRule: "/member/product"
     });
   },
   beforeDestroy() {
