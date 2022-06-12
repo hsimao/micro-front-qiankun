@@ -13,7 +13,7 @@ registerMicroApps([
     name: "vueMemberApp",
     entry:
       process.env.NODE_ENV === "production"
-        ? "./child/member/" // github page 用 ./
+        ? "/micro-front-qiankun/child/member/" // github page 用 ./
         : "//localhost:3001/child/member/",
     container: "#container",
     activeRule: "/member"
@@ -22,7 +22,7 @@ registerMicroApps([
     name: "reactProductApp",
     entry:
       process.env.NODE_ENV === "production"
-        ? "./child/product/"
+        ? "/micro-front-qiankun/child/product/"
         : "//localhost:3002/child/product/",
     container: "#container",
     activeRule: "/product"
@@ -31,7 +31,7 @@ registerMicroApps([
     name: "vueShopApp",
     entry:
       process.env.NODE_ENV === "production"
-        ? "./child/shop/"
+        ? "/micro-front-qiankun/child/shop/"
         : "//localhost:3003/child/shop/",
     container: "#container",
     activeRule: "/shop"
