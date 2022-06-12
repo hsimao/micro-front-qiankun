@@ -1,5 +1,5 @@
 <template>
-  <div id="about-app">
+  <div id="member-app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/contact">Contact</router-link> |
@@ -13,12 +13,12 @@
 
 <script>
 export default {
-  name: "AboutApp"
+  name: "MemberApp"
 };
 </script>
 
 <style scoped>
-#about-app {
+#member-app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -36,7 +36,7 @@ export default {
   color: #2c3e50;
 }
 
-#about-app #nav a.router-link-exact-active {
+#member-app #nav a.router-link-exact-active {
   color: white;
 }
 </style>

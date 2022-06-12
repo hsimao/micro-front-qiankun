@@ -1,8 +1,8 @@
 <template>
   <div class="shop">
-    <h1>This is an about shop page</h1>
+    <h1>This is an member shop page</h1>
 
-    <div id="about-container-shop"></div>
+    <div id="member-container-shop"></div>
   </div>
 </template>
 
@@ -17,13 +17,13 @@ export default {
     };
   },
   mounted() {
-    console.log("About Shop mount");
-
     this.microApp = loadMicroApp({
       name: "vueShopApp-sub",
       entry: "//localhost:3003",
-      container: "#about-container-shop",
-      activeRule: window.__POWERED_BY_QIANKUN_PARENT__ ? "/about/shop" : "/shop"
+      container: "#member-container-shop",
+      activeRule: window.__POWERED_BY_QIANKUN_PARENT__
+        ? "/member/shop"
+        : "/shop"
     });
   },
   beforeDestroy() {

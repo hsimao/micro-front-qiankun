@@ -10,10 +10,10 @@ window.__POWERED_BY_QIANKUN_PARENT__ = true;
 
 registerMicroApps([
   {
-    name: "vueAboutApp",
+    name: "vueMemberApp",
     entry: "//localhost:3001",
     container: "#container",
-    activeRule: "/about"
+    activeRule: "/member"
   },
   {
     name: "reactProductApp",

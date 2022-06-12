@@ -1,8 +1,8 @@
 <template>
   <div class="product">
-    <h1>This is an about product page</h1>
+    <h1>This is an member product page</h1>
 
-    <div id="about-container-product"></div>
+    <div id="member-container-product"></div>
   </div>
 </template>
 
@@ -20,9 +20,9 @@ export default {
     this.microApp = loadMicroApp({
       name: "reactProductApp-sub",
       entry: "//localhost:3002",
-      container: "#about-container-product",
+      container: "#member-container-product",
       activeRule: window.__POWERED_BY_QIANKUN_PARENT__
-        ? "/about/product"
+        ? "/member/product"
         : "/product"
     });
   },

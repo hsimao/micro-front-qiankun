@@ -14,7 +14,7 @@ function render(props = {}) {
   const { container, setGlobalState } = props;
 
   router = new VueRouter({
-    base: window.__POWERED_BY_QIANKUN__ ? "/about/" : "/",
+    base: window.__POWERED_BY_QIANKUN__ ? "/member/" : "/",
     mode: "history",
     routes
   });
@@ -27,7 +27,7 @@ function render(props = {}) {
     router,
     store,
     render: (h) => h(App)
-  }).$mount(container ? container.querySelector("#about-app") : "#about-app");
+  }).$mount(container ? container.querySelector("#member-app") : "#member-app");
 }
 
 // 独立运行时
@@ -36,10 +36,10 @@ if (!window.__POWERED_BY_QIANKUN__) {
 }
 
 export async function bootstrap() {
-  console.log("[vue] vue about app bootstraped");
+  console.log("[vue] vue member app bootstraped");
 }
 export async function mount(props) {
-  console.log("[vue] vue about app mount");
+  console.log("[vue] vue member app mount");
   props.onGlobalStateChange((state, prev) => {
     store.commit("setContainerState", state);
   }, true);

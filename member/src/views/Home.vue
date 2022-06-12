@@ -1,6 +1,6 @@
 <template>
   <div class="aboutpage home">
-    <h1 class="title">Sub App Vue About</h1>
+    <h1 class="title">Sub App Vue Member</h1>
     <p>containerState</p>
     <pre>{{ getContainerState }}</pre>
 

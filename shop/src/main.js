@@ -17,7 +17,7 @@ function render(props = {}) {
   let base = "/";
   // NOTE: 如果有 __POWERED_BY_QIANKUN_PARENT__ 表示自己是第三層微服務
   if (window.__POWERED_BY_QIANKUN_PARENT__) {
-    base = "/about/shop";
+    base = "/member/shop";
     // NOTE: 如果是 __POWERED_BY_QIANKUN__ 表示自己是第二層微服務
   } else if (window.__POWERED_BY_QIANKUN__) {
     base = "/shop";

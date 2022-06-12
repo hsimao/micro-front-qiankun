@@ -1,14 +1,22 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/about/contact">Contact</router-link> |
-      <router-link to="/about/product">About Product</router-link> |
-      <router-link to="/about/shop/">About Shop</router-link> |
-      <router-link to="/product">Product</router-link> |
-      <router-link to="/shop">Shop</router-link> |
-      <router-link to="/profile">Profile</router-link>
+      <div class="nav__item">
+        <p>主應用</p>
+        ： <router-link to="/">Home</router-link> |
+        <router-link to="/contact">Contact</router-link>
+      </div>
+      <div class="nav__item">
+        <p>Member 子應用</p>
+        ： <router-link to="/member">Member</router-link> |
+        <router-link to="/member/contact">Contact</router-link> |
+        <router-link to="/member/product">嵌套子應用 Product</router-link> |
+        <router-link to="/member/shop/">嵌套子應用 Shop</router-link>
+      </div>
+      <div class="nav__item">
+        <router-link to="/product">子應用 Product</router-link> |
+        <router-link to="/shop">子應用 Shop</router-link> |
+      </div>
     </div>
 
     <p>globalState from container</p>
@@ -82,5 +90,20 @@ export default {
 #container {
   width: 80%;
   margin: 0 auto;
+}
+
+#nav .nav__item {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 5px;
+}
+
+#nav .nav__item p {
+  margin: 0;
+}
+
+#nav .nav__item a {
+  padding: 0 10px;
 }
 </style>
