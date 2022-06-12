@@ -13,11 +13,20 @@ let instance = null;
 
 function render(props = {}) {
   const { container, setGlobalState } = props;
+  let base = "/child/shop/";
+
+  if (props?.name) {
+    if (props.name === "vueShopApp") {
+      // NOTE: container 單獨引入的模式
+      base = "/shop/";
+    } else if (props.name === "vueShopApp-sub") {
+      // NOTE: member 巢狀引入的模式
+      base = "/member/shop/";
+    }
+  }
 
   router = new VueRouter({
-    base: window.__POWERED_BY_QIANKUN_PARENT__
-      ? "/child/member/shop/"
-      : "/child/shop/",
+    base,
     mode: "history",
     routes
   });
