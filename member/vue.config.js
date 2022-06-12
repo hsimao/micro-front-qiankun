@@ -14,6 +14,8 @@ module.exports = {
       jsonpFunction: `webpackJsonp_${name}`
     }
   },
-  // publicPath: "/child/member/"
-  publicPath: "./"
+  publicPath:
+    process.env.NODE_ENV === "production"
+      ? "/micro-front-qiankun/"
+      : "/child/member/"
 };
