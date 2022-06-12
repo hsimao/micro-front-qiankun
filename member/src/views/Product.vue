@@ -21,7 +21,7 @@ export default {
       name: "reactProductApp-sub",
       entry:
         process.env.NODE_ENV === "production"
-          ? "/child/product/"
+          ? "./child/product/"
           : "//localhost:3002/child/product/",
       container: "#member-container-product",
       activeRule: "/member/product"
