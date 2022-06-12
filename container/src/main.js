@@ -13,7 +13,7 @@ registerMicroApps([
     name: "vueMemberApp",
     entry:
       process.env.NODE_ENV === "production"
-        ? "/child/member/"
+        ? "./child/member/"
         : "//localhost:3001/child/member/",
     container: "#container",
     activeRule: "/member"
