@@ -21,7 +21,7 @@ export default {
       name: "vueShopApp-sub",
       entry:
         process.env.NODE_ENV === "production"
-          ? "./child/shop/"
+          ? "/child/shop/"
           : "//localhost:3003/child/shop/",
       container: "#member-container-shop",
       activeRule: "/member/shop"
