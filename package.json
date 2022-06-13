@@ -1,0 +1,31 @@
+{
+  "name": "qiankun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "start": "npm-run-all --parallel start:*",
+    "start:main": "cd container && npm run serve",
+    "start:sub-member": "cd member && npm run serve",
+    "start:sub-shop": "cd shop && npm run serve",
+    "start:sub-product": "cd product && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsimao/micro-front-qiankun.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hsimao/micro-front-qiankun/issues"
+  },
+  "homepage": "https://github.com/hsimao/micro-front-qiankun#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

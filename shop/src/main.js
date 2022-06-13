@@ -13,17 +13,16 @@ let instance = null;
 
 function render(props = {}) {
   const { container, setGlobalState } = props;
-  const basePrefix =
-    process.env.NODE_ENV === "production" ? "/micro-front-qiankun/" : "";
-  let base = `${basePrefix}/child/shop/`;
+
+  let base = "/child/shop/";
 
   if (props?.name) {
     if (props.name === "vueShopApp") {
       // NOTE: container 單獨引入的模式
-      base = `${basePrefix}/shop/`;
+      base = "/shop/";
     } else if (props.name === "vueShopApp-sub") {
       // NOTE: member 巢狀引入的模式
-      base = `${basePrefix}/member/shop/`;
+      base = "/member/shop/";
     }
   }
 

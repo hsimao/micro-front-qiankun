@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["contact"],{b8fa:function(t,n,e){"use strict";e.r(n);var c=function(){var t=this,n=t.$createElement;t._self._c;return t._m(0)},a=[function(){var t=this,n=t.$createElement,e=t._self._c||n;return e("div",{staticClass:"contact"},[e("h1",[t._v("Root App Contact")])])}],o=e("2877"),s={},l=Object(o["a"])(s,c,a,!1,null,null,null);n["default"]=l.exports}}]);
-//# sourceMappingURL=contact.d4899b7a.js.map
