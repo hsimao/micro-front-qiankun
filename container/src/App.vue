@@ -16,6 +16,7 @@
       <div class="nav__item">
         <router-link to="/product">子應用 Product</router-link> |
         <router-link to="/shop">子應用 Shop</router-link> |
+        <router-link to="/nuxt">子應用 Nuxt</router-link>
       </div>
     </div>
 

@@ -9,10 +9,11 @@
   },
   "scripts": {
     "start": "npm-run-all --parallel start:*",
-    "start:main": "cd container && npm run serve",
-    "start:sub-member": "cd member && npm run serve",
-    "start:sub-shop": "cd shop && npm run serve",
-    "start:sub-product": "cd product && npm start"
+    "start:main": "cd container && yarn serve",
+    "start:sub-member": "cd member && yarn serve",
+    "start:sub-shop": "cd shop && yarn serve",
+    "start:sub-product": "cd product && npm start",
+    "start:sub-blog": "cd blog && yarn dev"
   },
   "repository": {
     "type": "git",
